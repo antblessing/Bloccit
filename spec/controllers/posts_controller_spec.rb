@@ -48,6 +48,8 @@ RSpec.describe PostsController, :type => :controller do
       post :create, post: {title: RandomData.random_sentence, body: RandomData.random_paragraph}
       expect(response).to redirect_to Post.last
     end
+    
+    
   end
       
   describe "GET show" do
