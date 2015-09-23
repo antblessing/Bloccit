@@ -3,13 +3,10 @@
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-        <%= link_to post.title, post %>
-        <% @posts = Post.all %>
-        <% @posts.each_with_index do |post, index|  %>
-          <% if index % 5 == 4 %>
-          <% post.update_attributes(title: 'CENSORED')  %>
-          <% end %>
+        <% if post.id % 5 == 0 %>
+          <% post.title = "CENSORED" %>
         <% end %>  
+        <%= link_to post.title, post %>
       </h4>
     </div>
   </div>
