@@ -14,6 +14,20 @@ class SponsoredPostsController < ApplicationController
     @sponsoredpost = SponsoredPost.find(params[:id])
   end
   
+  def update
+    @sponsoredpost = SponsoredPost.find(params[:id])
+    @sponsoredpost.title = params[:sponsored_post][:title]
+    @sponsoredpost.body = params[:sponsored_post][:body]
+    
+    if @post.save
+      flash[:notice] = "Post was updated."
+      redirect_to [@sponsoredpost.topic, @sponsoredpost]
+    else
+      flash[:error] = "There was an error saving the post. Try again."
+      render :edit
+    end
+  end
+  
   def create
     @sponsoredpost = Post.new
     @sponsoredpost.title = params[:sponsored_post][:title]
