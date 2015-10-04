@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'rates/show'
+
   get 'labels/show'
 
   resources :topics do
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
   end
   
   resources :labels, only: [:show]
+  
+  resources :rates, only: [:show]
 
   resources :users, only: [:new, :create]
   

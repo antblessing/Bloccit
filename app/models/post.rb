@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
     has_many :comments, dependent: :destroy
     has_many :labelings, as: :labelable
     has_many :labels, through: :labelings
+    has_many :ratings, as: :rateable
+    has_many :rates, through: :ratings
     
     default_scope { order('created_at DESC') }
     
