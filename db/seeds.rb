@@ -52,6 +52,12 @@ member = User.create!(
   email: 'member@example.com',
   password: 'helloworld'
   )
+  
+me = User.create!(
+  name: 'test user',
+  email: 'antblessing@gmail.com',
+  password: 'helloworld'
+  )
 
 
 puts "Seed finished"

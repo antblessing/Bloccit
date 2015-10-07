@@ -35,4 +35,6 @@
  
  # Used for encrypting User passwords
  gem 'bcrypt'
+ 
+ gem 'figaro'
 
