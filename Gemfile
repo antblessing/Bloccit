@@ -18,6 +18,7 @@
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails', '~> 4.0'
  end
  
  # Use SCSS for stylesheets
@@ -37,4 +38,5 @@
  gem 'bcrypt'
  
  gem 'figaro'
+ 
 
