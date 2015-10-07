@@ -20,7 +20,9 @@
  </div>
  
  <h2>Posts</h2>
- <%= render @user.posts %>
- 
- <h2>Comments</h2>
- <%= render @user.comments %>
+ <%= posts_or_comments(@user) %>
+   
+ <% if @user.comments.any? %>
+   <h2>Comments</h2>
+   <%= render @user.comments %>
+<% end %>
