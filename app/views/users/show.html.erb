@@ -33,6 +33,9 @@
     <%= fav.post.title %>
     "<%= fav.post.votes.count %> votes"
     "<%= fav.post.comments.count %> comments"
+     <% avatar_url = User.avatar_url(@user, 48) %>
+     <% unless avatar_url.blank? %>
      <%= image_tag User.avatar_url(@user, 48), class: "gravatar" %>
+     <% end %>
   </p>
 <% end %>    
