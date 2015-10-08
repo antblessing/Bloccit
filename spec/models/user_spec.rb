@@ -122,4 +122,11 @@ end
       expect(User.avatar_url(known_user, 48)).to eq(expected_gravatar)
     end
   end
+  
+  describe "#show favorited posts" do
+    it "shows posts the user has favorited" do
+      favorite = user.favorites.where(post: @post).create
+      expect()
+    end
+  end
 end
