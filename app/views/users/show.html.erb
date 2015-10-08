@@ -26,7 +26,13 @@
   <h2>Comments</h2>
   <%= render @user.comments %>
 <% end %>
-
-<% if @user.favorites.any? %>
-    <h2>Favorites</h2>
-    
+<h2>Favorite posts</h2>
+<% @user.favorites.each do |fav| %>
+<% avatar_url = User.avatar_url(@user, 128) %>
+  <p>
+    <%= fav.post.title %>
+    "<%= fav.post.votes.count %> votes"
+    "<%= fav.post.comments.count %> comments"
+     <%= image_tag User.avatar_url(@user, 48), class: "gravatar" %>
+  </p>
+<% end %>    

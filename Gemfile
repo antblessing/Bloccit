@@ -12,6 +12,8 @@
  # #2
  group :development do
    gem 'sqlite3'
+   gem 'web-console', '~> 2.0'
+   gem 'annotate'
  end
  
  group :development, :test do
@@ -19,6 +21,7 @@
   gem 'pry-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', '~> 4.0'
+  
  end
  
  # Use SCSS for stylesheets
