@@ -43,6 +43,17 @@ class Api::V1::TopicsController < Api::V1::BaseController
     end
   end
   
+  def create_post
+    post = Post.new(post_params)
+ 
+    if post.valid?
+      post.save!
+      render json: post.to_json, status: 201
+    else
+      render json: {error: "Post is invalid", status: 400}, status: 400
+    end
+  end
+  
   private
   
   def topic_params
