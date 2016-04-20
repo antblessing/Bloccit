@@ -59,21 +59,6 @@ ActiveRecord::Schema.define(version: 20151016022305) do
 
   add_index "labels", ["labelable_type", "labelable_id"], name: "index_labels_on_labelable_type_and_labelable_id"
 
-  create_table "lebelings", force: :cascade do |t|
-    t.integer  "label_id"
-    t.integer  "topic_id"
-    t.integer  "post_id"
-    t.integer  "labelable_id"
-    t.string   "labelable_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "lebelings", ["label_id"], name: "index_lebelings_on_label_id"
-  add_index "lebelings", ["labelable_type", "labelable_id"], name: "index_lebelings_on_labelable_type_and_labelable_id"
-  add_index "lebelings", ["post_id"], name: "index_lebelings_on_post_id"
-  add_index "lebelings", ["topic_id"], name: "index_lebelings_on_topic_id"
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -86,42 +71,6 @@ ActiveRecord::Schema.define(version: 20151016022305) do
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
-
-  create_table "rates", force: :cascade do |t|
-    t.string   "severity"
-    t.integer  "rateable_id"
-    t.string   "rateable_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "rates", ["rateable_type", "rateable_id"], name: "index_rates_on_rateable_type_and_rateable_id"
-
-  create_table "ratings", force: :cascade do |t|
-    t.integer  "rate_id"
-    t.integer  "topic_id"
-    t.integer  "post_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "ratings", ["post_id"], name: "index_ratings_on_post_id"
-  add_index "ratings", ["rate_id"], name: "index_ratings_on_rate_id"
-  add_index "ratings", ["rateable_type", "rateable_id"], name: "index_ratings_on_rateable_type_and_rateable_id"
-  add_index "ratings", ["topic_id"], name: "index_ratings_on_topic_id"
-
-  create_table "sponsored_posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "price"
-    t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "sponsored_posts", ["topic_id"], name: "index_sponsored_posts_on_topic_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
