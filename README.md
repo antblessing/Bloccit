@@ -18,3 +18,5 @@ This was the first project of many during the Full Stack Web Development track a
 - run rake db:create & rake db:migrate
 - Run server with rails s
 - Navigate to localhost:3000
+
+Deployed on Heroku [here](arcane-depths-4489.herokuapp.com)
