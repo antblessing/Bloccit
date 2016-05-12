@@ -19,4 +19,4 @@ This was the first project of many during the Full Stack Web Development track a
 - Run server with rails s
 - Navigate to localhost:3000
 
-Deployed on Heroku [here](arcane-depths-4489.herokuapp.com)
+Deployed on Heroku [here](https://arcane-depths-4489.herokuapp.com)
