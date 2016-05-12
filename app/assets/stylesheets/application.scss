@@ -38,3 +38,14 @@
   right: 100px;
   font-size: 100px;
 }
+
+.nav > li > a:focus,
+.nav > li > a:hover
+{
+    text-decoration: underline;
+    background-color: #B2DFDB;
+}
+
+a {
+  color: black !important ;
+}
